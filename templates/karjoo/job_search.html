@@ -1,0 +1,145 @@
+{% extends 'blog/home.html' %}
+
+{% block title %}
+<title> نتایج جستجو </title>
+{% endblock title %}
+
+{% block content %}
+
+<div class="container" style="text-align: right">
+    <p>
+        تعداد
+        {{count}}
+        عدد جستجو یافت شد
+    </p>
+</div>
+
+
+
+<!-- Listings -->
+<div class="row">
+
+    <div class="col-md-8">
+        {% for job in jobs %}
+        <div class="card mb-8 shadow-sm" style="text-align:right">
+            <h2>
+                <a href="{%url 'job_detail' job.id %}">
+                    {{ job.job_title }}
+                </a>
+                <br>
+
+            </h2>
+
+            <div class="card-body container">
+
+                <p class="card-text">{{ job.job_skills}}</p>
+
+                <hr>
+            </div>
+
+        </div>
+        <br>
+
+        {% endfor %}
+    </div>
+    <div class="col-md-4">
+        <section style="background-image: linear-gradient(to right, rgb(7, 97, 133) , rgb(3, 97, 185));"
+            id="showcase-inner" class=" showcase-search text-white py-4">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <form action="{% url 'job_search' %}">
+                            <div class="form-row">
+                                <div class="col-md-4 mb-3">
+                                    <label class="sr-only">عنوان شغلی</label>
+                                    <input type="text" name="job_title" class="form-control" placeholder="عنوان شغلی"
+                                        value="{{job.job_title}}">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label class="sr-only">مهارت شغلی</label>
+                                    <input type="text" name="job_skills" class="form-control" placeholder="مهارت شغلی"
+                                        value="{{job.job_skills}}">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label class="sr-only">ویژگی شغلی</label>
+                                    <input type="text" name="job_limits" class="form-control" placeholder="ویژگی "
+                                        value="{{job.job_limits}}">
+                                </div>
+
+
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col-md-4 mb-3">
+                                    <label class="sr-only">حقوق</label>
+                                    <select name="job_salary" class="form-control">
+                                        <option selected="true" disabled="disabled">حقوق</option>
+                                        {% for key,value in salary_field %}
+                                        <option value="{{ key }}">{{value}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label class="sr-only">سابقه کار</label>
+                                    <select name="job_work_record" class="form-control">
+                                        <option selected="true" disabled="disabled">سابقه کار</option>
+                                        {% for key,value in work_record %}
+                                        <option value="{{ key }}">{{value}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+
+                                <div class="col-md-4 mb-3">
+                                    <label class="sr-only">دسته شغلی</label>
+                                    <select name="job_category" class="form-control">
+                                        <option selected="true" disabled="disabled">دسته شغلی</option>
+                                        {% for key,value in category_field %}
+                                        <option value="{{ key }}">{{value}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-4 mb-3">
+                                    <label class="sr-only">جنسیت</label>
+                                    <select name="job_gender_limit" class="form-control">
+                                        <option selected="true" disabled="disabled">جنسیت</option>
+                                        {% for key,value in gender_field %}
+                                        <option value="{{ key }}">{{value}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+
+
+                                <div class="col-md-4 mb-3">
+                                    <label class="sr-only">مدرک</label>
+                                    <select name="job_degree_limit" class="form-control">
+                                        <option selected="true" disabled="disabled">مدرک</option>
+                                        {% for key,value in degree_field %}
+                                        <option value="{{ key }}">{{value}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label class="sr-only">سن</label>
+                                    <select name="job_age_limit" class="form-control">
+                                        <option selected="true" disabled="disabled">سن</option>
+                                        {% for key,value in age_field %}
+                                        <option value="{{ key }}">{{value}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary  mt-0" type="submit">جستجو</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+{% endblock content %}

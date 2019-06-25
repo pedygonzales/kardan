@@ -1,0 +1,10 @@
+{% extends 'blog/home.html' %}
+
+{% block title %}داشبود{% endblock %}
+
+{% block content %}
+<h1>داشبورد</h1>
+<p>خوش آمدید. میتوانید در <a href="{% url 'edit' %}">پروفایل خود را ویرایش کرده</a> یا در <a
+        href="{% url 'password_change' %}">رمزعبور
+        خود را تغییر دهید</a>.</p>
+{% endblock %}

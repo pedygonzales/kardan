@@ -1,0 +1,28 @@
+{% extends 'blog/home.html' %}
+
+
+{% block content %}
+
+{% for karjoo in object_list %}
+<div class="col-md-12">
+    <div class="card mb-12 shadow-sm" style="text-align:right">
+        <h2 class="container">
+            <a href="{%url 'karjoo_detail' karjoo.id %}">
+                {{ karjoo.kjname }}
+            </a>
+            <br>
+
+        </h2>
+
+        <div class="card-body container">
+
+            <p class="card-text">{{ karjoo.kjmaharat}}</p>
+
+            <hr>
+        </div>
+    </div>
+    <br>
+</div>
+{% endfor %}
+
+{% endblock content %}

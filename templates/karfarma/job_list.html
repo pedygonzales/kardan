@@ -1,0 +1,29 @@
+{% extends 'blog/home.html' %}
+
+
+{% block content %}
+
+{% for job in object_list %}
+<div class="col-md-12">
+    <div class="card mb-12 shadow-sm" style="text-align:right">
+        <h2>
+            <a href="{%url 'job_detail' job.id %}">
+                {{ job.job_title }}
+            </a>
+            <br>
+
+        </h2>
+
+        <div class="card-body container">
+            <h6>مهارت های مورد نیاز:</h6>
+            <p class="card-text">{{ job.job_skills}}</p>
+
+            <hr>
+        </div>
+
+    </div>
+    <br>
+</div>
+{% endfor %}
+
+{% endblock content %}

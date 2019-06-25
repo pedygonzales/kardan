@@ -1,0 +1,31 @@
+{% extends 'blog/home.html' %}
+{% block title %} ورود {% endblock title %}
+
+
+{% block content %}
+<br>
+
+<h1>ورود به سایت</h1>
+
+{% if form.errors %}
+<p>
+    نام کاربری و گذرواژه مطابقت نداشتند
+    لطفا دوباره امتحان کنید
+</p>
+{%else%}
+<p>لطفا از فرم زیر جهت ورود به سایت استفاده کنید</p>
+<p> اگر اکانت ندارید <a href="{%url 'register'%}"> ثبت نام کنید </a></p>
+{% endif %}
+<div class="container">
+    <form action="{%url 'login'%}" method="post">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{next}}" />
+        <p><input type="submit" value="ورود"></p>
+    </form>
+    <p>
+        <a href="{% url 'password_reset' %}">رمز عبور خود را فراموش کرده اید؟</a>
+    </p>
+</div>
+
+{% endblock content %}

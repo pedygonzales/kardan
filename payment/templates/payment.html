@@ -1,0 +1,59 @@
+{% extends 'blog/home.html' %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>پرداخت</title>
+</head>
+{% block content %}
+
+<body>
+    {% if messages %}
+    <div style="text-align: center">
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    <!--     <div style="text-align: center">
+        <h4>مقدار را مشخص کنید </h4>
+        <form action="{% url 'payment' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="amount" placeholder="مقدار">
+            <input type="submit" value="پرداخت">
+        </form>
+
+
+    </div> -->
+    <!--     <div style="margin: auto">
+        <script language='JavaScript' src='https://api.nextpay.org/static/js/nextpay.min.js'></script>
+        <script language='JavaScript'>
+            var nextpay_PRmTh = new Nextpay('{'
+                + '"id":"nextpay_PRmTh"'
+                + ',"apikey":"9d5d894b-6cd2-469d-8ee0-e1b8d7e277c2"'
+                + ',"view":"form"'
+                + ',"amount":100'
+                + ',"name_family":{"require":true}'
+                + ',"account_name":{"require":true}'
+                + ',"callback_failed":"http://127.0.0.1:8000/karjoo/pay/"'
+                + ',"callback_success":"http://127.0.0.1:8000/karjoo/pay/callback/"'
+                + '}').show();
+        </script>
+
+    </div> -->
+</body>
+
+
+
+<br><br><br><br><br>
+<br><br><br><br><br>
+<br><br><br><br><br>
+
+</html>
+{% endblock content %}

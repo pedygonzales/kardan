@@ -1,0 +1,14 @@
+{% extends 'blog/home.html' %}
+{% load crispy_forms_tags %}
+{% block title %}ویرایش اکانت{% endblock %}
+
+{% block content %}
+<h1>ویرایش اکانت</h1>
+<p>با استفاده از فرم زیر مشخصات اکانت خود را ویرایش کنید</p>
+<form action="." method="post" enctype="multipart/form-data">
+  {{ user_form|crispy }}
+  {{ profile_form|crispy }}
+  {% csrf_token %}
+  <p><input type="submit" value="ذخیره سازی تغییرات"></p>
+</form>
+{% endblock %}

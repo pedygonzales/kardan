@@ -1,0 +1,55 @@
+{% extends 'blog/home.html' %}
+{% load crispy_forms_tags %}
+
+
+
+
+{% block content %}
+
+
+<div class="container">
+    <form action="" enctype="multipart/form-data" method="post" novalidate>
+
+        {{ form|crispy }}
+
+
+        <button type="submit" class="btn btn-primary">ارسال</button>
+
+        {% csrf_token %}
+    </form>
+</div>
+
+
+
+<!-- <form action="" enctype="multipart/form-data" method="post" novalidate>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+
+            {{form.job_salary}}
+            <label for='{{form.job_salary}}'> حقوق </label>
+        </div>
+
+        <div class="form-group col-md-6">
+            {{form.job_title}}
+            <label for='{{form.job_title}}'>عنوان شغلی</label>
+        </div>
+
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+
+            {{form.job_skills}}
+            <label for='{{form.job_skills}}'>مهارتهای شغلی</label>
+        </div>
+        <div class="form-group col-md-6">
+            {{form.job_limits}}
+            <label for='{{form.job_limits}}'>محدودیت های شغل</label>
+        </div>
+    </div>
+
+    <input type="submit" value="ارسال">
+    {% csrf_token %}
+</form> -->
+
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends 'blog/home.html' %}
+
+
+{% block content %}
+
+
+<div class="col-md-12">
+    <div class="card mb-12 shadow-sm" style="text-align:right">
+        <h2 class="container">
+
+            {{ post.post_title }}
+
+        </h2>
+        <img src="{{post.image.url}}" class="rounded mx-auto d-block">
+        <div class="card-body container">
+
+            <p class="card-text">{{ post.body}}</p>
+            <hr>
+            <p class="date">
+                ایجاد شده در {{post.post_date }}
+            </p>
+
+
+
+        </div>
+    </div>
+    <br>
+</div>
+
+
+{% endblock content %}

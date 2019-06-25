@@ -1,0 +1,16 @@
+{% extends 'blog/home.html' %}
+{% load crispy_forms_tags %}
+{% block title %}ساخت اکانت{% endblock %}
+
+{% block content %}
+<div class="container" style="text-align:right">
+  <h1>ساخت اکانت</h1>
+  <p>لطفا با استفاده از فرم زیر در سایت ثبت نام کنید</p>
+  <form action="." method="post">
+    {{ user_form|crispy}}
+    {% csrf_token %}
+    <p><input type="submit" value="ساخت اکانت"></p>
+  </form>
+</div>
+
+{% endblock %}

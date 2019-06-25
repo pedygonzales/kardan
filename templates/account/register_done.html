@@ -1,0 +1,8 @@
+{% extends 'blog/home.html' %}
+
+{% block title %}خوش آمدید{% endblock %}
+
+{% block content %}
+<h1>خوش آمدید {{ new_user.first_name }}!</h1>
+<p>اکانت شما با موفقیت ساخته شد حال میتوانید <a href="{% url 'login' %}">وارد شوید</a>.</p>
+{% endblock %}

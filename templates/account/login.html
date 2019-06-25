@@ -1,0 +1,23 @@
+{% extends 'blog/home.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+<title>
+  ورود به سایت
+</title>
+{% endblock title %}
+
+
+
+{% block content %}
+<div class="container" style="text-align:right">
+  <h1>ورود</h1>
+  <p>لطفا از فرم زیر جهت ورود به سایت استفاده کنید</p>
+  <p>اگر اکانت ندارید<a href="{%url 'register'%}">ثبتنام کنید</a></p>
+  <form action="." method="post">
+    {{ form|crispy }}
+    {% csrf_token %}
+    <p><input type="submit" value="ورود"></p>
+  </form>
+
+</div>
+{% endblock content %}

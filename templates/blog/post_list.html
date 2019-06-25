@@ -1,0 +1,25 @@
+{% extends 'blog/home.html' %}
+
+
+{% block content %}
+
+{% for post in posts %}
+<div class="col-md-12">
+    <div class="card mb-12 shadow-sm" style="text-align:right">
+        <h2 class="container">
+            <a href="{%url 'post_detail' post.id %}">
+                {{ post.post_title }}
+            </a>
+        </h2>
+
+        <div class="card-body container">
+
+            <p class="card-text">{{ post.body}}</p>
+            <hr>
+        </div>
+    </div>
+    <br>
+</div>
+{% endfor %}
+
+{% endblock content %}

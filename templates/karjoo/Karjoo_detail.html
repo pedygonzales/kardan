@@ -1,0 +1,30 @@
+{% extends 'blog/home.html' %}
+
+
+{% block content %}
+
+
+<div class="col-md-12">
+    <div class="card mb-12 shadow-sm" style="text-align:right">
+        <h2 class="container">
+
+            {{ karjoo.kjname }}
+        </h2>
+
+        <div class="card-body container">
+            <h6>مهارت:</h6>
+            <p class="card-text">{{ karjoo.kjmaharat}}</p>
+            <h6>رشته تحصیلی:</h6>
+            <p class="card-text">{{ karjoo.kjtahsilat}}</p>
+            <h6>مقطع تحصیلی:</h6>
+            <p class="card-text">{{ karjoo.kjmaghta}}</p>
+            <hr>
+
+
+        </div>
+    </div>
+    <br>
+</div>
+
+
+{% endblock content %}

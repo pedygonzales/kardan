@@ -1,0 +1,73 @@
+{% extends 'blog/home.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+<title>
+    کارفرما
+</title>
+
+{% endblock title %}
+
+
+<div>
+    {% block content %}
+    <div class="container">
+        <form action="" enctype="multipart/form-data" method="post" novalidate>
+
+            {{form|crispy}}
+
+
+            <button type="submit" class="btn btn-primary">ارسال</button>
+
+            {% csrf_token %}
+        </form>
+    </div>
+
+
+    <!-- 
+    <form action="" enctype="multipart/form-data" method="post" novalidate>
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                {{form.kfcname}}
+                <label for='{{form.kfcname}}'>نام شرکت</label>
+            </div>
+            <div class="form-group col-md-6">
+
+                {{form.kfmname}}
+                <label for='{{form.kfmname}}'> نام مسئول </label>
+            </div>
+
+        </div>
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                {{form.domain}}
+                <label for='{{form.domain}}'>حوزه کاری</label>
+            </div>
+            <div class="form-group col-md-6">
+
+                {{form.address}}
+                <label for='{{form.address}}'> آدرس </label>
+            </div>
+
+        </div>
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                {{form.kfmobile}}
+                <label for='{{form.kfmobile}}'>شماره تماس</label>
+            </div>
+            <div class="form-group col-md-6">
+                {{form.kfphoto}}
+                <label for='{{form.kfphoto}}'>لوگو</label>
+            </div>
+
+        </div>
+
+        <input type="submit" value="ارسال">
+        {% csrf_token %}
+    </form> -->
+
+    {% endblock content %}
+</div>

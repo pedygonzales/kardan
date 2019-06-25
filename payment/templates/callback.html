@@ -1,0 +1,35 @@
+{% extends 'blog/home.html' %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>نتیجه پرداخت</title>
+</head>
+{% block content %}
+
+<body>
+  <div style="text-align: center">
+
+    {% if result_code.code == 0 %}
+    <h2>پرداخت موفق</h2>
+    <p>شماره تراکنش را ذخیره کنید</p>
+    <a class="p-2 text-blue" href="{% url 'karjoo_register' %}">ثبت نام
+      کارجو</a>
+    {% else %}
+    <h2>پرداخت ناموفق</h2>
+    {% endif %}
+    <!-- <p>نتیجه ی پرداخت : {{ result_code }}</p> -->
+    <p>شماره تراکنس : {{ trans_id }}</p>
+  </div>
+</body>
+
+<br><br><br><br><br>
+<br><br><br><br><br>
+<br><br><br><br><br>
+
+</html>
+{% endblock content %}

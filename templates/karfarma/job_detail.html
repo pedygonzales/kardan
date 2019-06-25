@@ -1,0 +1,44 @@
+{% extends 'blog/home.html' %}
+
+
+{% block content %}
+
+
+<div class="col-md-12">
+    <div class="card mb-12 shadow-sm" style="text-align:right">
+        <div class="container">
+            <h2>
+
+                {{ job.job_title }}
+            </h2>
+
+        </div>
+        <br>
+
+        <div class="container">
+            <h5>دسته شغلی:</h5>
+            <p class="card-text">{{ job.job_category }}</p>
+            <h5>مهارت های مورد نیاز:</h5>
+            <p class="card-text">{{ job.job_skills }}</p>
+            <h5>ویژگی شغل:</h5>
+            <p class="card-text">{{ job.job_limits }}</p>
+            <h5>حقوق شغل:</h5>
+            <p class="card-text">{{ job.job_salary }}</p>
+            <h5>محدودیت سنی شغل:</h5>
+            <p class="card-text">{{ job.job_age_limit }}</p>
+            <h5>محدودیت جنسیتی شغل:</h5>
+            <p class="card-text">{{ job.job_gender_limit }}</p>
+            <h5>مدرک تحصیلی برای شغل:</h5>
+            <p class="card-text">{{ job.job_degree_limit }}</p>
+            <hr>
+        </div>
+
+
+
+
+    </div>
+    <br>
+</div>
+
+
+{% endblock content %}

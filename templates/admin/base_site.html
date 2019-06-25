@@ -1,0 +1,12 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{% block title %} پنل ادمین {% endblock %}
+
+{% block branding %}
+<h1 id="head">
+    <a href="{% url 'admin:index' %}">کاریابی کاردان</a>
+    <img src="{% static 'logo.png' %}" class="brand_img" alt="لوگو">
+</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

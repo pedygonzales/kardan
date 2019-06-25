@@ -1,0 +1,109 @@
+{% extends 'blog/home.html' %}
+
+
+{% block title %}
+<title>
+    کارفرما
+</title>
+
+{% endblock title %}
+
+
+
+{% block content %}
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom ">
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-blue" href="{% url 'job_list' %}">لیست مشاغل</a>
+        <a class="p-2 text-blue" href="{% url 'karfarma_register' %}">ثبت نام
+            کارفرما</a>
+        <a class="p-2 text-blue" href="{% url 'add_job' %}">افزودن شغل جدید</a>
+    </nav>
+
+</div>
+
+
+
+<section style="background-image: linear-gradient(to right, rgb(7, 97, 133) , rgb(3, 97, 185));" id="showcase-inner"
+    class="showcase-search text-white py-4">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <form action="{% url 'skill_search' %}">
+                    <div class="form-row">
+                        <div class="col-md-3 mb-3">
+                            <label class="sr-only">مهارت شغلی</label>
+                            <input type="text" name="kjmaharat" class="form-control" placeholder="مهارت شغلی"
+                                value="{{karjoo.kjmaharat}}">
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label class="sr-only">عنوان شغلی</label>
+                            <input type="text" name="kjrequestjob" class="form-control" placeholder="عنوان شغلی"
+                                value="{{karjoo.kjrequestjob}}">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label class="sr-only">سابقه کار</label>
+                            <select name="kjworkrecord" class="form-control">
+                                <option selected="true" disabled="disabled">سابقه کار</option>
+                                {% for key,value in work_record %}
+                                <option value="{{ key }}">{{value}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label class="sr-only">حقوق</label>
+                            <select name="kjsalary" class="form-control">
+                                <option selected="true" disabled="disabled">حقوق</option>
+                                {% for key,value in salary_field %}
+                                <option value="{{ key }}">{{value}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-md-3 mb-3">
+                            <label class="sr-only">رشته تحصیلی</label>
+                            <input type="text" name="kjtahsilat" class="form-control" placeholder="رشته تحصیلی"
+                                value="{{karjoo.kjtahsilat}}">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label class="sr-only">جنسیت</label>
+                            <select name="kjgender" class="form-control">
+                                <option selected="true" disabled="disabled">جنسیت</option>
+                                {% for key,value in gender_field %}
+                                <option value="{{ key }}">{{value}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+
+                        <div class="col-md-3 mb-3">
+                            <label class="sr-only">مدرک</label>
+                            <select name="kjmaghta" class="form-control">
+                                <option selected="true" disabled="disabled">مدرک</option>
+                                {% for key,value in degree_field %}
+                                <option value="{{ key }}">{{value}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label class="sr-only">سن</label>
+                            <select name="kjage" class="form-control">
+                                <option selected="true" disabled="disabled">سن</option>
+                                {% for key,value in age_field %}
+                                <option value="{{ key }}">{{value}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary mt-0 mb-0" type="submit">جستجو</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

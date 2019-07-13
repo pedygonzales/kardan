@@ -85,7 +85,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': "kardan",
         "USER": "postgres",
-        "PASSWORD": "amylynnlee",
+        "PASSWORD": "password",
         "HOST": "localhost",
         "PORT": '5432'
     }
@@ -114,9 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'fa-ir'
-
-TIME_ZONE = 'Asia/Tehran'
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
